@@ -9,14 +9,14 @@ package aplicacionparking;
  *
  * @author chavo
  */
-public class Plazas {
+public class Plaza {
 
     int numPlaza;
     int sotano;
     char tipo;
     Vehiculo vehiculo;
 
-    public Plazas(int numPlaza, int sotano) {
+    public Plaza(int numPlaza, int sotano) {
         this.numPlaza = numPlaza;
         this.sotano = sotano;
     }
