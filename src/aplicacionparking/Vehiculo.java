@@ -10,5 +10,5 @@ package aplicacionparking;
  * @author daw1
  */
 public class Vehiculo {
-    
+    String matricula;
 }
