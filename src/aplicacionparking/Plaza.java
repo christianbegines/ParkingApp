@@ -52,20 +52,20 @@ public class Plaza {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
-      public int precio(Vehiculo v) {
+      public int precio() {
         int precioFinal = 0;
         Coche c;
         Moto m;
-        if (v instanceof Coche) {
-            c = (Coche) v;
+        if (vehiculo instanceof Coche) {
+            c = (Coche)vehiculo;
             if(c.tipo.equalsIgnoreCase("Largo")){
                 precioFinal = 55;
             }else{
                 precioFinal = 40;
             }
         }
-        if (v instanceof Moto) {
-            m = (Moto) v;            
+        if (vehiculo instanceof Moto) {
+            m = (Moto)vehiculo;            
             precioFinal = 25;
         }        
         if (this.sotano == 2){
