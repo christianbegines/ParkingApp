@@ -52,7 +52,27 @@ public class Plaza {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
-
+      public int precio(Vehiculo v) {
+        int precioFinal = 0;
+        Coche c;
+        Moto m;
+        if (v instanceof Coche) {
+            c = (Coche) v;
+            if(c.tipo.equalsIgnoreCase("Largo")){
+                precioFinal = 55;
+            }else{
+                precioFinal = 40;
+            }
+        }
+        if (v instanceof Moto) {
+            m = (Moto) v;            
+            precioFinal = 25;
+        }        
+        if (this.sotano == 2){
+            precioFinal = precioFinal - 5;
+        }
+        return precioFinal;
+    }
     @Override
     public String toString() {
         String resp;
