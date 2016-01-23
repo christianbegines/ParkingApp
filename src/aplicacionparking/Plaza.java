@@ -52,6 +52,8 @@ public class Plaza {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
+    
+    
       public int precio() {
         int precioFinal = 0;
         Coche c;
@@ -73,6 +75,8 @@ public class Plaza {
         }
         return precioFinal;
     }
+      
+      
     @Override
     public String toString() {
         String resp;
