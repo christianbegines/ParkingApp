@@ -57,7 +57,6 @@ public class Plaza {
       public int precio() {
         int precioFinal = 0;
         Coche c;
-        Moto m;
         if (vehiculo instanceof Coche) {
             c = (Coche)vehiculo;
             if(c.tipo.equalsIgnoreCase("Largo")){
@@ -66,8 +65,7 @@ public class Plaza {
                 precioFinal = 40;
             }
         }
-        if (vehiculo instanceof Moto) {
-            m = (Moto)vehiculo;            
+        if (vehiculo instanceof Moto) {       
             precioFinal = 25;
         }        
         if (this.sotano == 2){
