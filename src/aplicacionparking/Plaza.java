@@ -53,28 +53,33 @@ public class Plaza {
         this.vehiculo = vehiculo;
     }
     
-    
-      public int precio() {
+    public String SNN(){
+        String resp;
+        resp=""+this.sotano+this.numPlaza+"";
+        return resp;
+        
+    }
+            
+    public int precio() {
         int precioFinal = 0;
         Coche c;
         if (vehiculo instanceof Coche) {
-            c = (Coche)vehiculo;
-            if(c.tipo.equalsIgnoreCase("Largo")){
+            c = (Coche) vehiculo;
+            if (c.tipo.equalsIgnoreCase("Largo")) {
                 precioFinal = 55;
-            }else{
+            } else {
                 precioFinal = 40;
             }
         }
-        if (vehiculo instanceof Moto) {       
+        if (vehiculo instanceof Moto) {
             precioFinal = 25;
-        }        
-        if (this.sotano == 2){
+        }
+        if (this.sotano == 2) {
             precioFinal = precioFinal - 5;
         }
         return precioFinal;
     }
-      
-      
+
     @Override
     public String toString() {
         String resp;
