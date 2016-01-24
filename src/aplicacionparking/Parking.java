@@ -14,11 +14,15 @@ import java.util.Map;
  */
 public class Parking {
     String nombreParking, direccion;
-    Map<String,Plaza> listaPlazas = new HashMap<>(); // Cambiar la clave por SNN ,s el numero de sotano y nn el numero de plaza.
+    Map<String,Plaza> listaPlazas = new HashMap<>();//Cambiar la clave por SNN ,s el numero de sotano y nn el numero de plaza.
 
     public Parking(String nombreParking) {
-        this.nombreParking = nombreParking;
+        this.nombreParking = nombreParking; // Creacion de las plazas en el menu
+            
     }
-    
+    public boolean alquilar(Vehiculo v){
+        return false;
+        
+    }
     
 }
