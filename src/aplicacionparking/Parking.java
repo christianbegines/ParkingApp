@@ -5,8 +5,7 @@
  */
 package aplicacionparking;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -18,7 +17,20 @@ public class Parking {
 
     public Parking(String nombreParking) {
         this.nombreParking = nombreParking;
+        
     }
-    
+    public String alquilar(Vehiculo v){
+        Iterator<String> it =listaPlazas.keySet().iterator();
+        boolean comprobar=false;
+        String clave,resp="";
+        Plaza p;
+        while( it.hasNext()) {
+            clave = it.next();
+             p = listaPlazas.get(clave);
+            if(p.getVehiculo()==null){
+                resp=p.SNN();
+            }else resp=null;
+        }return resp;
+    }
     
 }
