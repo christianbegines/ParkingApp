@@ -16,12 +16,16 @@ public class AplicacionParking {
      */
     public static void main(String[] args) {
         Parking park= new Parking("Pepinillo");
-        Vehiculo v= new Vehiculo("123TG","134fgh");
+        Vehiculo v= new Moto(2,"123TG","134fgh");
+        Vehiculo v2= new Moto(2,"123TG","134fgh");
         Plaza p1= new Plaza(1,2);
+        p1.setVehiculo(v);
+        
         System.out.println("");
         System.out.println(park.alquilar(v));
         System.out.println(p1.precio());
-    
+        System.out.println(park.alquilar(v2));
+        System.out.println(park.darBaja("26"));
     }
     
     
