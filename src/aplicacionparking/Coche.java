@@ -16,11 +16,16 @@ public class Coche extends Vehiculo{
         this.tipo = tipo;
     }
 
+    public Coche(String tipo, String matricula, String nifDueño) {
+        super(matricula, nifDueño);
+        this.tipo = tipo;
+    }
+
     public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTip(String tipo) {
         this.tipo = tipo;
     }
 
