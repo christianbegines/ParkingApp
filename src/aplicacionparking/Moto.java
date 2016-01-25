@@ -15,6 +15,11 @@ public class Moto extends Vehiculo {
     public Moto() {
     }
 
+    public Moto(int numRuedas, String matricula, String nifDueño) {
+        super(matricula, nifDueño);
+        this.numRuedas = numRuedas;
+    }
+    
     public int getNumRuedas() {
         return numRuedas;
     }
