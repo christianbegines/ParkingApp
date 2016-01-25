@@ -17,6 +17,16 @@ public class Parking {
 
     public Parking(String nombreParking) {
         this.nombreParking = nombreParking;
+        Plaza p1= new Plaza(1,1);
+        Plaza p2= new Plaza(2,1);
+        Plaza p3= new Plaza(3,1);
+        Plaza p4= new Plaza(4,1);
+        Plaza p5= new Plaza(1,2);
+        Plaza p6= new Plaza(2,2);
+        Plaza p7= new Plaza(3,3);
+        Plaza p8= new Plaza(4,3);
+       
+        
         
     }
     public String alquilar(Vehiculo v){
