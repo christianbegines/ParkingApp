@@ -76,6 +76,9 @@ public class AplicacionParking {
                     }
                     
                 }break;
+                case 3: {
+                    System.out.println("Las ganancias del parking son :" + park.ganancias());
+                }break;
                 case 4: {
                     salir =false;
                 }
