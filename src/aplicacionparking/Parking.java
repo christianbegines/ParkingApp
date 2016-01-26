@@ -52,21 +52,13 @@ public class Parking {
         while (it.hasNext() && comprobar == false) {
             numPlaza = it.next();
             plaza = listaPlazas.get(numPlaza);
-            if (plaza.getTipo() == 'M' && v instanceof Moto) {
+            if (plaza.getTipo() == 'M' && v instanceof Moto || plaza.getTipo() == 'C' && v instanceof Coche ) {
                 if (plaza.getVehiculo() == null) {
                     comprobar = true;
                     resp = plaza.SNN();
                     plaza.setVehiculo(v);
                 }
-            }
-            if (plaza.getTipo() == 'C' && v instanceof Coche) {
-                if (plaza.getVehiculo() == null) {
-                    comprobar = true;
-                    resp = plaza.SNN();
-                    plaza.setVehiculo(v);
-                }
-            }
-
+            }          
         }
         return resp;
     }
