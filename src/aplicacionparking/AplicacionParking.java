@@ -21,18 +21,20 @@ public class AplicacionParking {
     public static void main(String[] args) {
         Parking park= new Parking("Pepinillo");
         Vehiculo v= new Moto(2,"123TG","134fgh");
-        Vehiculo v2= new Moto(2,"123TG","134fgh");
+        Vehiculo v2= new Moto(2,"3333TG","134fgh");
+        Vehiculo v3 = new Coche("Largo","45555YH","12222212F");
         Plaza p1= new Plaza(1,2);
         p1.setVehiculo(v);
         Collection<Plaza> plazas = new ArrayList<>();
         System.out.println("");
         System.out.println(park.alquilar(v));
+
         System.out.println(p1.precio());
         System.out.println(park.alquilar(v2));
-        System.out.println(park.darBaja("26"));
+        System.out.println(park.alquilar(v3));
         System.out.println(p1);
-        plazas = park.listarPlazas("libres", 'C');
-        System.out.println(plazas);
+        System.out.println(park.listarPlazas("ocupado", 'M'));
+        System.out.println(park.ganancias());
     }
     
     

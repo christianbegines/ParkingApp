@@ -101,5 +101,19 @@ public class Parking {
         }
         return listarPlazas;
     }
+    public int ganancias(){
+        int gananciastotales=0;        
+
+        
+        for (Plaza plaza: this.listarPlazas("ocupado",'M')){
+            gananciastotales = gananciastotales +plaza.precio();
+        }
+        for (Plaza plaza: this.listarPlazas("ocupado",'C')){
+            gananciastotales = gananciastotales + plaza.precio();
+        }       
+
+        return gananciastotales;
+        
+    }
 
 }

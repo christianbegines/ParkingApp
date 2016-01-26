@@ -18,7 +18,12 @@ public class Coche extends Vehiculo{
 
     public Coche(String tipo, String matricula, String nifDueño) {
         super(matricula, nifDueño);
-        this.tipo = tipo;
+        String otro="";
+        if(tipo.equalsIgnoreCase("corto") || tipo.equalsIgnoreCase("largo"))
+            otro = tipo;
+          
+        this.tipo = otro;
+        
     }
 
     public String getTipo() {
