@@ -73,18 +73,33 @@ public class Parking {
 
     public int darBaja(String snn) {
         int resultado;
+        Plaza plaza;
         if (listaPlazas.containsKey(snn)) {
+            plaza=listaPlazas.get(snn);
             if (listaPlazas.get(snn).getVehiculo() == null) {
                 resultado = 2;
 
             } else {
-                listaPlazas.put(snn, null);
+                plaza.setVehiculo(null);
                 resultado = 0;
             }
         } else {
             resultado = 1;
         }
         return resultado;
+    }
+
+    public List<Plaza> listarPlazas(String estado, char tipoVehiculo) {
+       List<Plaza> listarPlazas=new ArrayList();
+        for (Plaza plaza : this.listaPlazas.values()) {
+            if (estado.equalsIgnoreCase("libres") && plaza.getVehiculo() == null && tipoVehiculo == plaza.getTipo()) {
+                listarPlazas.add(plaza);
+            }
+            if (estado.equalsIgnoreCase("ocupado") && plaza.getVehiculo() != null && tipoVehiculo == plaza.getTipo()) {
+                listarPlazas.add(plaza);
+            }
+        }
+        return listarPlazas;
     }
 
 }

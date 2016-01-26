@@ -5,6 +5,10 @@
  */
 package aplicacionparking;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 /**2
  *
  * @author daw1
@@ -20,12 +24,15 @@ public class AplicacionParking {
         Vehiculo v2= new Moto(2,"123TG","134fgh");
         Plaza p1= new Plaza(1,2);
         p1.setVehiculo(v);
-        
+        Collection<Plaza> plazas = new ArrayList<>();
         System.out.println("");
         System.out.println(park.alquilar(v));
         System.out.println(p1.precio());
         System.out.println(park.alquilar(v2));
         System.out.println(park.darBaja("26"));
+        System.out.println(p1);
+        plazas = park.listarPlazas("libres", 'C');
+        System.out.println(plazas);
     }
     
     
