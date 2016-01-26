@@ -62,7 +62,12 @@ public  class Vehiculo {
     }
 
     public void setTelefono(String telefono) { //falta añadir 9 digitos al tlf.
-        this.telefono = telefono;
+        String otro="";
+        
+        if(telefono.length() == 9){
+            otro = telefono;             
+        }
+        this.telefono = otro;
     }
 
     @Override
