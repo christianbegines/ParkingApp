@@ -33,8 +33,14 @@ public class AplicacionParking {
         LocalDate hoy = LocalDate.now();
         boolean resp = false;
 
+        System.out.println("------|Bienvenido a parking developers|---------");
+        System.out.println("------------------------------------------------");
+        System.out.println("");
+        System.out.println("");
         do {
-            System.out.println("Bienvenido a parking developers.Que desea hacer?");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("              -|MENU|-                          ");
             System.out.println("----------1.Alquilar un vehiculo----------------");
             System.out.println("----------2.Dar de baja un vehiculo-------------");
             System.out.println("----------3.Conocer ganancias del parking-------");
@@ -106,7 +112,7 @@ public class AplicacionParking {
                     System.out.println("Lista de plazas de coches libres al final del dia " + hoy);
                     listaC = park.listarPlazas("Libres", 'C');
                     for (Plaza plaza : listaC) {
-                        respuesta += "   4  Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza() + "\n";
+                        respuesta += "     Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza() + "\n";
                     }
                     System.out.println(respuesta);
                     System.out.println("Lista de plazas de Motos libres al final del dia " + hoy);
@@ -115,13 +121,13 @@ public class AplicacionParking {
                         respuesta1 += "    Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza() + "\n";
                     }
                     System.out.println(respuesta1);
+                    System.out.println("Hasta pronto!");
                     salir = false;
                 }
 
             }
 
-        } while (salir
-                == true);
+        } while (salir == true);
 
     }
 
