@@ -48,7 +48,7 @@ public class AplicacionParking {
                         matricula = st.next();
                         if (matricula.length() == 7) {
                             resp = true;
-                        }else{
+                        } else {
                             System.out.println("Matricula erronea");
                         }
                     } while (resp == false);
@@ -59,7 +59,7 @@ public class AplicacionParking {
                         nifDueño = st.next();
                         if (nifDueño.length() == 9) {
                             resp = true;
-                        }else{
+                        } else {
                             System.out.println("Nif incorrecto");
                         }
                     } while (resp == false);

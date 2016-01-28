@@ -10,6 +10,7 @@ package aplicacionparking;
  * @author borja
  */
 public class Moto extends Vehiculo {
+
     private int numRuedas;
 
     public Moto() {
@@ -19,7 +20,7 @@ public class Moto extends Vehiculo {
         super(matricula, nifDueño);
         this.numRuedas = numRuedas;
     }
-    
+
     public int getNumRuedas() {
         return numRuedas;
     }
@@ -30,8 +31,7 @@ public class Moto extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString() + " numero de ruedas: "+numRuedas; //To change body of generated methods, choose Tools | Templates.
+        return super.toString() + " numero de ruedas: " + numRuedas; //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

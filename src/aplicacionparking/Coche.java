@@ -9,7 +9,8 @@ package aplicacionparking;
  *
  * @author borja
  */
-public class Coche extends Vehiculo{
+public class Coche extends Vehiculo {
+
     private String tipo;
 
     public Coche(String tipo) {
@@ -18,12 +19,13 @@ public class Coche extends Vehiculo{
 
     public Coche(String tipo, String matricula, String nifDueño) {
         super(matricula, nifDueño);
-        String otro="";
-        if(tipo.equalsIgnoreCase("corto") || tipo.equalsIgnoreCase("largo"))
+        String otro = "";
+        if (tipo.equalsIgnoreCase("corto") || tipo.equalsIgnoreCase("largo")) {
             otro = tipo;
-          
+        }
+
         this.tipo = otro;
-        
+
     }
 
     public String getTipo() {
@@ -36,8 +38,7 @@ public class Coche extends Vehiculo{
 
     @Override
     public String toString() {
-        return super.toString() + " tipo: "+tipo; //To change body of generated methods, choose Tools | Templates.
+        return super.toString() + " tipo: " + tipo; //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

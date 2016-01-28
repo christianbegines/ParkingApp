@@ -9,7 +9,8 @@ package aplicacionparking;
  *
  * @author daw1
  */
-public  class Vehiculo {
+public class Vehiculo {
+
     private String matricula;
     private String modelo;
     private String color;
@@ -19,7 +20,6 @@ public  class Vehiculo {
     public Vehiculo() {
     }
 
-    
     public Vehiculo(String matricula, String nifDueño) {
         this.matricula = matricula;
         this.nifDueño = nifDueño;
@@ -62,20 +62,17 @@ public  class Vehiculo {
     }
 
     public void setTelefono(String telefono) { //falta añadir 9 digitos al tlf.
-        String otro="";
-        
-        if(telefono.length() == 9){
-            otro = telefono;             
+        String otro = "";
+
+        if (telefono.length() == 9) {
+            otro = telefono;
         }
         this.telefono = otro;
     }
 
     @Override
     public String toString() {
-        return matricula+ " "+modelo+" "+color; //ToString que indica matricula,modelo y color del vehiculo.
+        return matricula + " " + modelo + " " + color; //ToString que indica matricula,modelo y color del vehiculo.
     }
-    
-    
 
-    
 }
