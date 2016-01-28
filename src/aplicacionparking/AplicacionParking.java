@@ -82,6 +82,8 @@ public class AplicacionParking {
                         if (tipoVehiculo == 'M') {
                             v = new Moto(2, matricula, nifDueño);
                             System.out.println("Tu plaza es: " + park.alquilar(v));
+                        }else{
+                            System.out.println("Tipo incorrecto");
                         }
                     }
 
