@@ -49,12 +49,12 @@ public class AplicacionParking {
                         System.out.println("Que es : Largo o Corto?");
                         tipoCoche = st.next();
                         v = new Coche(tipoCoche, matricula, nifDueño);
-                        System.out.println(park.alquilar(v));
+                        System.out.println("Tu plaza es:"+park.alquilar(v));
 
                     } else {
                         if (tipoVehiculo == 'M') {
                             v = new Moto(2, matricula, nifDueño);
-                            System.out.println(park.alquilar(v));
+                            System.out.println("Tu plaza es: " +park.alquilar(v));
                         }
                     }
 
@@ -82,7 +82,9 @@ public class AplicacionParking {
                 }
                 break;
                 case 4: {
+                    System.out.println("----Lista de plazas de coches libres al final del dia");
                     System.out.println(park.listarPlazas("Libres",'C'));
+                    System.out.println("----Lista de plazas de Motos libres al final del dia");
                     System.out.println(park.listarPlazas("Libres", 'M'));
                     
                     
