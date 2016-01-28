@@ -10,11 +10,11 @@ package aplicacionparking;
  * @author daw1
  */
 public  class Vehiculo {
-    String matricula;
-    String modelo;
-    String color;
-    String nifDueño;
-    String telefono;
+    private String matricula;
+    private String modelo;
+    private String color;
+    private String nifDueño;
+    private String telefono;
 
     public Vehiculo() {
     }

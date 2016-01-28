@@ -10,7 +10,7 @@ package aplicacionparking;
  * @author borja
  */
 public class Moto extends Vehiculo {
-    int numRuedas;
+    private int numRuedas;
 
     public Moto() {
     }

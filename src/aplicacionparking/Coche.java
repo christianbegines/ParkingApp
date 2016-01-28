@@ -10,7 +10,7 @@ package aplicacionparking;
  * @author borja
  */
 public class Coche extends Vehiculo{
-    String tipo;
+    private String tipo;
 
     public Coche(String tipo) {
         this.tipo = tipo;

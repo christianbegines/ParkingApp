@@ -5,7 +5,8 @@
  */
 package aplicacionparking;
 
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
 
 /**
  * 2
@@ -24,10 +25,12 @@ public class AplicacionParking {
         Parking park = new Parking("PARKING DEVELOPER");
         boolean salir = true;
         int casos, resultado;
-        String matricula, nifDueño, tipoCoche, SNN;
+        String matricula, nifDueño, tipoCoche, SNN, respuesta = "", respuesta1 = "";
         char tipoVehiculo;
-
+        List<Plaza> listaC;
+        List<Plaza> listaM;
         Vehiculo v;
+        LocalDate hoy=LocalDate.now();
 
         do {
             System.out.println("Bienvenido a parking developers.Que desea hacer?");
@@ -49,12 +52,12 @@ public class AplicacionParking {
                         System.out.println("Que es : Largo o Corto?");
                         tipoCoche = st.next();
                         v = new Coche(tipoCoche, matricula, nifDueño);
-                        System.out.println("Tu plaza es:"+park.alquilar(v));
+                        System.out.println("Tu plaza es:" + park.alquilar(v));
 
                     } else {
                         if (tipoVehiculo == 'M') {
                             v = new Moto(2, matricula, nifDueño);
-                            System.out.println("Tu plaza es: " +park.alquilar(v));
+                            System.out.println("Tu plaza es: " + park.alquilar(v));
                         }
                     }
 
@@ -82,16 +85,19 @@ public class AplicacionParking {
                 }
                 break;
                 case 4: {
-                    System.out.println("----Lista de plazas de coches libres al final del dia");
-                    System.out.println(park.listarPlazas("Libres",'C'));
-                    System.out.println("----Lista de plazas de Motos libres al final del dia");
-                    System.out.println(park.listarPlazas("Libres", 'M'));
-                    
-                    
-                    
-                    
-                    
-                    
+                    System.out.println("Lista de plazas de coches libres al final del dia "+ hoy);
+                    listaC = park.listarPlazas("Libres", 'C');
+                    for (Plaza plaza : listaC) {
+                        respuesta += "   4  Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza()+"\n";
+                    }
+                    System.out.println(respuesta);
+                    System.out.println("Lista de plazas de Motos libres al final del dia "+hoy);
+                    listaM = park.listarPlazas("Libres", 'M');
+                    for (Plaza plaza : listaM) {
+                        respuesta1 += "    Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza()+"\n";
+                    }
+                    System.out.println(respuesta1);
+
                     salir = false;
                 }
 
