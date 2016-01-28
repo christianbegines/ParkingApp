@@ -84,7 +84,7 @@ public class Plaza {
     public String toString() {
         String resp;
         if (this.vehiculo == null) {
-            resp =  "Sotano:" + this.sotano+ " "+"NºPlaza:" + this.numPlaza ;
+            resp =  "Sotano:" + this.sotano+ " "+"NºPlaza:" + this.numPlaza+"\n" ;
         } else {
             resp = "NºPlaza:" + this.numPlaza + " " + "Sotano:" + this.sotano + "\n"
                     + "Vehiculo:" + vehiculo.toString() + "\n" + "Precio:"+ precio();

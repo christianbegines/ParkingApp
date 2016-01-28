@@ -82,6 +82,14 @@ public class AplicacionParking {
                 }
                 break;
                 case 4: {
+                    System.out.println(park.listarPlazas("Libres",'C'));
+                    System.out.println(park.listarPlazas("Libres", 'M'));
+                    
+                    
+                    
+                    
+                    
+                    
                     salir = false;
                 }
 
