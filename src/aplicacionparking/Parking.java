@@ -52,13 +52,13 @@ public class Parking {
         while (it.hasNext() && comprobar == false) {
             numPlaza = it.next();
             plaza = listaPlazas.get(numPlaza);
-            if (plaza.getTipo() == 'M' && v instanceof Moto || plaza.getTipo() == 'C' && v instanceof Coche ) {
+            if (plaza.getTipo() == 'M' && v instanceof Moto || plaza.getTipo() == 'C' && v instanceof Coche) {
                 if (plaza.getVehiculo() == null) {
                     comprobar = true;
                     resp = plaza.SNN();
                     plaza.setVehiculo(v);
                 }
-            }          
+            }
         }
         return resp;
     }
@@ -67,7 +67,7 @@ public class Parking {
         int resultado;
         Plaza plaza;
         if (listaPlazas.containsKey(snn)) {
-            plaza=listaPlazas.get(snn);
+            plaza = listaPlazas.get(snn);
             if (listaPlazas.get(snn).getVehiculo() == null) {
                 resultado = 2;
 
@@ -82,7 +82,7 @@ public class Parking {
     }
 
     public List<Plaza> listarPlazas(String estado, char tipoVehiculo) {
-       List<Plaza> listarPlazas=new ArrayList();
+        List<Plaza> listarPlazas = new ArrayList();
         for (Plaza plaza : this.listaPlazas.values()) {
             if (estado.equalsIgnoreCase("libres") && plaza.getVehiculo() == null && tipoVehiculo == plaza.getTipo()) {
                 listarPlazas.add(plaza);
@@ -93,19 +93,19 @@ public class Parking {
         }
         return listarPlazas;
     }
-    public int ganancias(){
-        int gananciastotales=0;        
 
-        
-        for (Plaza plaza: this.listarPlazas("ocupado",'M')){
-            gananciastotales = gananciastotales +plaza.precio();
-        }
-        for (Plaza plaza: this.listarPlazas("ocupado",'C')){
+    public int ganancias() {
+        int gananciastotales = 0;
+
+        for (Plaza plaza : this.listarPlazas("ocupado", 'M')) {
             gananciastotales = gananciastotales + plaza.precio();
-        }       
+        }
+        for (Plaza plaza : this.listarPlazas("ocupado", 'C')) {
+            gananciastotales = gananciastotales + plaza.precio();
+        }
 
         return gananciastotales;
-        
+
     }
 
 }

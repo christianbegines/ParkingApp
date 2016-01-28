@@ -30,7 +30,8 @@ public class AplicacionParking {
         List<Plaza> listaC;
         List<Plaza> listaM;
         Vehiculo v;
-        LocalDate hoy=LocalDate.now();
+        LocalDate hoy = LocalDate.now();
+        boolean resp = false;
 
         do {
             System.out.println("Bienvenido a parking developers.Que desea hacer?");
@@ -42,15 +43,32 @@ public class AplicacionParking {
             switch (casos) {
                 case 1: {
                     System.out.println("Vamos a alquilar su vehiculo,introduzcamos datos.");
-                    System.out.println("Introduce Matricula");
-                    matricula = st.next();
-                    System.out.println("Introduce tu nif");
-                    nifDueño = st.next();
+                    do {
+                        System.out.println("Introduce Matricula");
+                        matricula = st.next();
+                        if (matricula.length() == 7) {
+                            resp = true;
+                        }else{
+                            System.out.println("Matricula erronea");
+                        }
+                    } while (resp == false);
+                    resp = false;
+                    do {
+
+                        System.out.println("Introduce tu nif");
+                        nifDueño = st.next();
+                        if (nifDueño.length() == 9) {
+                            resp = true;
+                        }else{
+                            System.out.println("Nif incorrecto");
+                        }
+                    } while (resp == false);
                     System.out.println("Introduce el tipo, C o M");
                     tipoVehiculo = st.next().toUpperCase().charAt(0);
                     if (tipoVehiculo == 'C') {
                         System.out.println("Que es : Largo o Corto?");
                         tipoCoche = st.next();
+
                         v = new Coche(tipoCoche, matricula, nifDueño);
                         System.out.println("Tu plaza es:" + park.alquilar(v));
 
@@ -85,25 +103,25 @@ public class AplicacionParking {
                 }
                 break;
                 case 4: {
-                    System.out.println("Lista de plazas de coches libres al final del dia "+ hoy);
+                    System.out.println("Lista de plazas de coches libres al final del dia " + hoy);
                     listaC = park.listarPlazas("Libres", 'C');
                     for (Plaza plaza : listaC) {
-                        respuesta += "   4  Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza()+"\n";
+                        respuesta += "   4  Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza() + "\n";
                     }
                     System.out.println(respuesta);
-                    System.out.println("Lista de plazas de Motos libres al final del dia "+hoy);
+                    System.out.println("Lista de plazas de Motos libres al final del dia " + hoy);
                     listaM = park.listarPlazas("Libres", 'M');
                     for (Plaza plaza : listaM) {
-                        respuesta1 += "    Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza()+"\n";
+                        respuesta1 += "    Numero sotano: " + plaza.getSotano() + " Numero plaza: " + plaza.getNumPlaza() + "\n";
                     }
                     System.out.println(respuesta1);
-
                     salir = false;
                 }
 
             }
 
-        } while (salir == true);
+        } while (salir
+                == true);
 
     }
 
