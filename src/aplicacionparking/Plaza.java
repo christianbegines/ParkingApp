@@ -11,9 +11,9 @@ package aplicacionparking;
  */
 public class Plaza {
 
-    int numPlaza;
-    int sotano;
-    char tipo;
+    private int numPlaza;
+    private int sotano;
+    private char tipo;
     Vehiculo vehiculo;
 
     public Plaza(int numPlaza, int sotano) {
@@ -40,7 +40,7 @@ public class Plaza {
     public char getTipo() {
         return tipo;
     }
-    
+
     public void setTipo(char tipo) {
         this.tipo = tipo;
     }
@@ -52,20 +52,20 @@ public class Plaza {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
-    
-    public String SNN(){
+
+    public String SNN() {
         String resp;
-        resp=""+this.sotano+this.numPlaza+"";
+        resp = "" + this.sotano + this.numPlaza + "";
         return resp;
-        
+
     }
-            
+
     public int precio() {
         int precioFinal = 0;
         Coche c;
         if (vehiculo instanceof Coche) {
             c = (Coche) vehiculo;
-            if (c.tipo.equalsIgnoreCase("Largo")) {
+            if (c.getTipo().equalsIgnoreCase("Largo")) {
                 precioFinal = 55;
             } else {
                 precioFinal = 40;
@@ -84,10 +84,10 @@ public class Plaza {
     public String toString() {
         String resp;
         if (this.vehiculo == null) {
-            resp =  "Sotano:" + this.sotano+ " "+"NºPlaza:" + this.numPlaza+"\n" ;
+            resp = "Sotano:" + this.sotano + " " + "NºPlaza:" + this.numPlaza + "\n";
         } else {
             resp = "NºPlaza:" + this.numPlaza + " " + "Sotano:" + this.sotano + "\n"
-                    + "Vehiculo:" + vehiculo.toString() + "\n" + "Precio:"+ precio();
+                    + "Vehiculo:" + vehiculo.toString() + "\n" + "Precio:" + precio();
         }
 
         return resp;
