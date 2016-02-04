@@ -48,45 +48,47 @@ public class AplicacionParking {
             casos = sc.nextInt();
             switch (casos) {
                 case 1: {
-                    System.out.println("Vamos a alquilar su vehiculo,introduzcamos datos.");
-                    do {
+                    try {
+                        System.out.println("Vamos a alquilar su vehiculo,introduzcamos datos.");
+
                         System.out.println("Introduce Matricula");
                         matricula = st.next();
-                        if (matricula.length() == 7) {
-                            resp = true;
+
+                        do {
+
+                            System.out.println("Introduce tu nif");
+                            nifDueño = st.next();
+                            if (nifDueño.length() == 9) {
+                                resp = true;
+                            } else {
+                                System.out.println("Nif incorrecto");
+                            }
+                        } while (resp == false);
+                        System.out.println("Introduce el tipo, C o M");
+                        tipoVehiculo = st.next().toUpperCase().charAt(0);
+
+                        if (tipoVehiculo == 'C') {
+                            System.out.println("Que es : Largo o Corto?");
+                            tipoCoche = st.next();
+
+                            v = new Coche(tipoCoche, matricula, nifDueño);
+
+                            System.out.println("Tu plaza es:" + park.alquilar(v));
+
                         } else {
-                            System.out.println("Matricula erronea");
-                        }
-                    } while (resp == false);
-                    resp = false;
-                    do {
+                            if (tipoVehiculo == 'M') {
 
-                        System.out.println("Introduce tu nif");
-                        nifDueño = st.next();
-                        if (nifDueño.length() == 9) {
-                            resp = true;
-                        } else {
-                            System.out.println("Nif incorrecto");
-                        }
-                    } while (resp == false);
-                    System.out.println("Introduce el tipo, C o M");
-                    tipoVehiculo = st.next().toUpperCase().charAt(0);
-                    if (tipoVehiculo == 'C') {
-                        System.out.println("Que es : Largo o Corto?");
-                        tipoCoche = st.next();
+                                v = new Moto(2, matricula, nifDueño);
 
-                        v = new Coche(tipoCoche, matricula, nifDueño);
-                        System.out.println("Tu plaza es:" + park.alquilar(v));
-
-                    } else {
-                        if (tipoVehiculo == 'M') {
-                            v = new Moto(2, matricula, nifDueño);
-                            System.out.println("Tu plaza es: " + park.alquilar(v));
-                        }else{
-                            System.out.println("Tipo incorrecto");
+                                System.out.println("Tu plaza es: " + park.alquilar(v));
+                            } else {
+                                System.out.println("Tipo incorrecto");
+                            }
                         }
+
+                    } catch (ErrorMatricula e) {
+                        System.out.println(e.getMessage());
                     }
-
                 }
                 break;
                 case 2: {

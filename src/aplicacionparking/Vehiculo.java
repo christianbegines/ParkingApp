@@ -22,6 +22,9 @@ public class Vehiculo {
 
     public Vehiculo(String matricula, String nifDueño) {
         this.matricula = matricula;
+        if(matricula.length()!= 7){
+            throw new ErrorMatricula();
+        }
         this.nifDueño = nifDueño;
     }
 
